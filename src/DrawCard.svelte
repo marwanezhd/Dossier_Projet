@@ -32,7 +32,7 @@
         padding-left: 15vh;
         padding-right: 15vh;
         position: relative;
-        height: 50vh; /* Ajustez la hauteur en fonction de vos besoins */
+        height: 50vh;
     }
 
     .card {
@@ -41,10 +41,10 @@
         width: 40vw;
         height: 25vh;
         position: absolute;
-        background-color: white; /* Ajoutez un fond blanc ou transparent pour éviter le chevauchement du texte */
-        padding: 2vh; /* Ajustez le rembourrage en fonction de vos besoins */
-        border: 1px solid #ddd; /* Ajoutez une bordure pour séparer les cartes */
-        border-radius: 5px; /* Ajustez la bordure en fonction de vos besoins */
+        background-color: white;
+        padding: 2vh;
+        border: 1px solid #ddd;
+        border-radius: 5px;
         box-shadow: 1.5vh 0 2vh 0px #00000080;
     }
     
@@ -54,8 +54,8 @@
         border-top-left-radius: 0vh;
         border-left: 1.3vh solid #0c3c6c85;
 
-        top: 0vh; /* Ajustez la position verticale de la deuxième carte */
-        z-index: 1; /* Assurez-vous que la deuxième carte est au-dessus de la première */
+        top: 0vh;
+        z-index: 1;
         animation: appearCard_1 1.5s ease forwards;
 	}
 
@@ -74,8 +74,8 @@
         border-top-left-radius: 0vh;
         border-left: 1.3vh solid #1084f9;
 
-        top: 6vh; /* Ajustez la position verticale de la deuxième carte */
-        z-index: 1; /* Assurez-vous que la deuxième carte est au-dessus de la première */
+        top: 6vh;
+        z-index: 1;
         margin-left: 4vh;
         animation: appearCard_2 2.5s ease forwards;
 	}
@@ -96,8 +96,8 @@
         border-top-left-radius: 0vh;
         border-left: 1.3vh solid #0c3c6c85;
 
-        top: 12vh; /* Ajustez la position verticale de la troisième carte */
-        z-index: 2; /* Assurez-vous que la troisième carte est au-dessus de la deuxième */
+        top: 12vh;
+        z-index: 2;
         margin-left: 8vh;
         animation: appearCard_3 3s ease forwards;
 	}

@@ -24,10 +24,9 @@
             if (index < text.length) {
                 animatedText += text.charAt(index);
                 index++;
-                setTimeout(animateText, 190); // Adjust the delay (in milliseconds) between letters
+                setTimeout(animateText, 190); // Ajuste le délais (ms) entre chaque lettres
             }
         };
-
         animateText();
     });
 </script>
