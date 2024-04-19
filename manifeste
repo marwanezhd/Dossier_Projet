@@ -1,0 +1,31 @@
+Manifeste de 'Visual Flow', application web de gestion de flux vidéo et de programmation TV.
+
+Concept : 
+L'idée est de créer une plateforme qui simplifie la gestion quotidienne des flux vidéo pour des professionnels de la télévision, et permet une mesure précise des performances de la chaîne de diffusion.Offrir une plus grande flexibilité lors de la programmation des playlists.L'application a pour objectif de simplifier la tâche des équipes de diffusion grâce à une interface épurée et adaptée aux contraintes métier.
+Fonctionnalités principales : Créer, Diffuser, Mesurer, Alerter
+[/!\] Les Fonts : A définir.
+Orientation de l'application : Desktop first.
+
+Niveau de responsivité visé : Full [m/d/t] avec un support natif du design sur l'intégralité des formats tablettes et desktop.
+Une version mobile adaptée est prévue (window.innerWidth <= 768).
+
+Langages utilisés : 
+- Html- Css- Javascript / TypeScript
+
+Stack Technologique [node.js] :
+FFmpeg: Intégration de FFmpeg pour le traitement efficace des flux multimédias.
+Conversion de formats, édition vidéo, et streaming adaptatif.
+Svelte: Svelte a une approche novatrice du développement d'interface utilisateur, permettant une écriture rapide et plus ou moins typée selon les besoins.Sa simplicité et son efficacité permettent de créer des interfaces réactives et fluides, améliorant ainsi l'expérience utilisateur.Il est également le framework frontend le plus léger au regard de la taille des bundles produits lors du build des livrables.
+Sveltestrap: Une bibliothèque de composants basée sur Bootstrap pour garantir une conception responsive, simplifiant le développement et assurant une interface utilisateur cohérente.
+SvelteKit: Cette infrastructure de développement construite sur Svelte offre une architecture légère et performante pour le développement d'applications web.SvelteKit facilite la création de routes, la gestion de l'état global et la génération statique pour une performance optimale.
+Firebase: le choix de Firebase en tant que backend s'explique par sa puissance, sa facilité d'utilisation et ses fonctionnalités en temps réel.Firebase sera utilisé pour stocker les playlists, les données de métriques, et pour gérer l'authentification des utilisateurs de manière sécurisée.
+Bootstrap: Le choix du framework responsive est en cohérence avec la stack du projet, ainsi les composants sveltestrap sont construit à partir des modèles génériques de bootstrap et sont calqués sur la responsive grid de bootstrap ainsi que certaines des classes de celui-ci. 
+
+Fonctionnalités Clés :
+Gestion de Flux Vidéo: L'application permet de téléverser, organiser et diffuser facilement des flux vidéo. La gestion intuitive des médias garantit une diffusion fluide et sans accroc.
+Mesure de métriques: Grâce à l'intégration de Firebase, nous offrons des outils de mesure de métriques avancés.Les utilisateurs peuvent analyser les performances en temps réel, et s'assurer de la bonne diffusion du flux vidéo sur la chaîne on air ainsi que du statut des différentes machines de transite des médias
+Programmation de Playlists: L'application offre une interface efficace pour planifier et organiser des playlists.Les utilisateurs peuvent définir des horaires précis, assurant une diffusion automatique et sans faille selon un calendrier prédéfini.
+Authentification sécurisée. L'application utilise Firebase pour une authentification robuste, garantissant que seuls les utilisateurs autorisés ont accès aux fonctionnalités sensibles.
+
+objectif visé :
+En unissant les avantages de Svelte, Sveltestrap, SvelteKit et Firebase cela donnera une plateforme puissante, fiable et modulable selon les usages que les utilisateurs en auront.
