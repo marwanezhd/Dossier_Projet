@@ -16,7 +16,7 @@
     <div class="mod_card">
         <div>
             <div class="select_card">
-                Plan du dossier
+                Dossier
                 <br /><br />
                 <Button color="light" on:click={() => switchMod("plan")}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">

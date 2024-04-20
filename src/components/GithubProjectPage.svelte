@@ -1,13 +1,21 @@
 <script>
-    let username = "marwanezhd";
-    let repo = "Dossier_Projet";
-    
-    function getRawGitHubURL(username, repo) {
-        console.log(`https://github.com/${username}/${repo}/raw/main/`)
-        return `https://github.com/${username}/${repo}/raw/main/index.html`;
-    }
+  import { onMount } from 'svelte';
+
+  let fileContent = '';
+
+  onMount(async () => {
+      try {
+          const response = await fetch('./src/App.svelte'); // Chemin vers le fichier App.svelte
+          if (!response.ok) {
+              throw new Error('Failed to fetch file content');
+          }
+          fileContent = await response.text();
+      } catch (error) {
+          console.error('Error fetching file content:', error);
+      }
+  });
 </script>
 
-<iframe title="github project" src={getRawGitHubURL(username, repo)} style="width: 100%; height: 100vh;"></iframe>
-
-<iframe  title="github project" src={getRawGitHubURL(username, repo)} width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+<pre>
+  <code>{fileContent}</code>
+</pre>
