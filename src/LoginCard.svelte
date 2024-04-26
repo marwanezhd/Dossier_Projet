@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { Form, FormGroup, Label, Input, Button } from "sveltestrap";
+    import BtnGoToCardMod from "./components/subComponents/BtnGoToCardMod.svelte";
 
     export let username;
     export let password;
@@ -35,7 +36,6 @@
     <div class="logo">
         <h1>{animatedText}</h1>
     </div>
-
     <h3 style="color: #c8cad4; font-weight: bold; text-align: center;">
         Login
     </h3>
@@ -68,6 +68,9 @@
             >
         </div>
     </Form>
+    <div class="column" align="center">
+        <BtnGoToCardMod color="#0c3c6cb2;"/>
+    </div>
 </div>
 
 <style>

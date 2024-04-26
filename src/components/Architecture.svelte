@@ -6,8 +6,10 @@
     import diagramVues from "../assets/diagram_vues.png";
     import BtnGoToCardMod from './subComponents/BtnGoToCardMod.svelte';
 </script>
-  
-<BtnGoToCardMod />
+
+<div style="background-color: #0c3c6cb2;">
+    <BtnGoToCardMod color="#0c3c6cb2;"/>
+</div>
 <main class="main">
     <div class="store">
         {#each [1, 2, 3] as index}
@@ -36,7 +38,6 @@
                         </div>
                     </div>
                 {/if}
-                
             </div>
         {/each}
     </div>
@@ -50,7 +51,7 @@
     .main {
         background-color: #0c3c6cb2;
         width: 100vw;
-        height: 100vh;
+        height: 96vh;
         overflow: hidden;
         display: flex;
         justify-content: center;

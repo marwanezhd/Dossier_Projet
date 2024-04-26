@@ -1,34 +1,27 @@
 <script>
     import { onMount } from "svelte";
-    import {
-        storage,
-        ref,
-        listAll,
-        getDownloadURL,
-        db,
-    } from "../../lib/firebase";
-    import { getFirestore, collection, getDocs } from "firebase/firestore";
+    import { getStorage, ref, listAll } from "firebase/storage";
 
-    let mediaList = [];
+    let fileList = [];
     let error = null;
     let loading = true;
 
-    const firestore = getFirestore();
+    // Initialize Firebase Storage
+    const storage = getStorage();
 
     const fetchFiles = async () => {
         try {
-            const querySnapshot = await getDocs(collection(db, "/media"));
-            mediaList = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            console.log("Files loaded successfully from Firestore!");
-        } catch (firestoreError) {
+            // List all files in the "media" directory
+            const storageRef = ref(storage, "media");
+            const files = await listAll(storageRef);
+            fileList = files.items.map((file) => file.name);
+            console.log("Files loaded successfully from Firebase Storage!");
+        } catch (storageError) {
             console.error(
-                "Error fetching files from Firestore:",
-                firestoreError,
+                "Error fetching files from Firebase Storage:",
+                storageError,
             );
-            error = "Error fetching files from Firestore.";
+            error = "Error fetching files from Firebase Storage.";
         } finally {
             loading = false;
         }
@@ -43,19 +36,11 @@
             <p>Loading files...</p>
         {:else if error}
             <p>{error}</p>
-        {:else if mediaList.length > 0}
+        {:else if fileList.length > 0}
             <h4>Liste des fichiers :</h4>
             <ul>
-                {#each mediaList as { id, name, downloadURL }}
-                    <li key={id}>
-                        <a
-                            href={downloadURL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {name}
-                        </a>
-                    </li>
+                {#each fileList as file}
+                    <li>{file}</li>
                 {/each}
             </ul>
         {:else}

@@ -7,6 +7,7 @@
     import FilePlan from "./components/FilePlan.svelte";
     import GithubProjectPage from "./components/GithubProjectPage.svelte";
 	import Architecture from "./components/Architecture.svelte";
+    import BtnGoToCardMod from "./components/subComponents/BtnGoToCardMod.svelte";
 
     export let username = undefined;
     export let password = undefined;
@@ -39,7 +40,6 @@
 					<div class="gauche">
 						<LoginCard bind:username bind:password bind:isLogged on:logout={UserlogOut}/>
 					</div>
-
 					<div class="droite" align="center">
 						<div class="container">
 							<DrawCard />
@@ -208,10 +208,4 @@
 			opacity: 1;
 		}
 	}
-
-
-	/* titre onglet */
-	title {
-        color: blue; /* Couleur du texte */
-    }
 </style>

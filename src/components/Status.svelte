@@ -1,72 +1,72 @@
 <script>
-    import { Button, FormText, Input, Alert, Badge, ButtonGroup, Card, CardTitle, CardSubtitle, CardText, CardBody, CardHeader, CardFooter } from "sveltestrap";
-    import StatusData from "./subComponents/statusData.svelte";
+    import {
+        Button,
+        FormText,
+        Input,
+        Alert,
+        Badge,
+        ButtonGroup,
+        Card,
+        CardTitle,
+        CardSubtitle,
+        CardText,
+        CardBody,
+        CardHeader,
+        CardFooter,
+    } from "sveltestrap";
+    import StatusCard from "./subComponents/StatusCard.svelte";
+
+    export let displayState = "line"; // line | mosaique
+
+    function handleDisplay() {
+        if (displayState === "line") {
+            displayState = "mosaique";
+            console.log("displayState : " + displayState); // dbg
+        } else {
+            displayState = "line";
+            console.log("displayState : " + displayState); // dbg
+        }
+    }
 </script>
 
+<div class="header">
+    <h3>Broadcast status</h3>
+    <div class="button-container">
+        <Button color="light" on:click={handleDisplay}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-grid"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"
+                />
+            </svg>
+        </Button>
 
-<h3>Broadcast status</h3>
-<main class="box">
-    <div class="centered-content">
-        <div class="card_1">
-          <Card theme="light" style="width: 80vw; box-shadow: 1vh 2vh 3vh 0vh #0c3c6c85; background-color: transparent;">
-            <CardHeader style="background-color: #0c3c6c85; color: white;">
-              <CardTitle><h4 class="Alert_title">Demo 1</h4></CardTitle>
-            </CardHeader>
-            <CardBody>
-                <div align="left">
-                    <Badge color="success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
-                      </svg></Badge>
-                    <Badge color="danger">problems <Badge color="light"><b>0</b></Badge></Badge>
-                </div>
-              <CardText>
-                <StatusData />
-              </CardText>
-            </CardBody>
-          </Card>
-        </div>
-
-        <div class="card_2">
-            <Card theme="light" style="width: 80vw; box-shadow: 1vh 2vh 3vh 0vh #0c3c6c85; background-color: transparent;">
-              <CardHeader style="background-color: #0c3c6c85; color: white;">
-                <CardTitle><h4 class="Alert_title">Demo 2</h4></CardTitle>
-              </CardHeader>
-              <CardBody>
-                  <div align="left">
-                      <Badge color="success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                          <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
-                        </svg></Badge>
-                      <Badge color="danger">problems <Badge color="light"><b>0</b></Badge></Badge>
-                  </div>
-                <CardText>
-                  <StatusData />
-                </CardText>
-              </CardBody>
-            </Card>
-          </div>
-
-          <div class="card_3">
-            <Card theme="light" style="width: 80vw; box-shadow: 1vh 2vh 3vh 0vh #0c3c6c85; background-color: transparent;">
-              <CardHeader style="background-color: #0c3c6c85; color: white;">
-                <CardTitle><h4 class="Alert_title">Demo 3</h4></CardTitle>
-              </CardHeader>
-              <CardBody>
-                  <div align="left">
-                      <Badge color="success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                          <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
-                        </svg></Badge>
-                      <Badge color="danger">problems <Badge color="light"><b>0</b></Badge></Badge>
-                  </div>
-                <CardText>
-                  <StatusData />
-                </CardText>
-              </CardBody>
-            </Card>
-          </div>
+        <Button color="light" on:click={handleDisplay}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                />
+            </svg>
+        </Button>
     </div>
+</div>
+
+<main class="box">
+    <StatusCard {displayState} />
 </main>
 
 <style>
@@ -75,19 +75,17 @@
         --t_2: 2.6s;
         --t_3: 3.4s;
     }
-    .card_1 {
-        border-radius: 1vh;
-        animation: fadeInOut var(--t_1) ease-in-out forwards;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
-    .card_2 {
-        border-radius: 1vh;
-        margin-top: 2vh;
-        animation: fadeInOut var(--t_2) ease-in-out forwards;
-    }
-    .card_3 {
-        border-radius: 1vh;
-        animation: fadeInOut var(--t_3) ease-in-out forwards;
-        margin-top: 2vh;
+
+    .button-container {
+        padding: 1vh;
+        display: flex;
+        gap: 1vh;
     }
 
     @keyframes fadeInOut {
@@ -105,7 +103,6 @@
             opacity: 1;
         }
     }
-
 
     .box {
         margin: 2vh;

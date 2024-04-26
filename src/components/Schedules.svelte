@@ -1,5 +1,7 @@
 <script>
     import {
+        ButtonGroup,
+        Button,
         Dropdown,
         DropdownToggle,
         DropdownItem,
@@ -30,15 +32,27 @@
 </script>
 
 <main>
-    <h1>Schedules</h1>
+    <ButtonGroup style="margin-top: 0.4vh;">
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+        <Button color="light">Créer</Button>
+
+        <Button color="danger">Supprimer</Button>
+      </ButtonGroup>
     <div class="scrollable_box">
         <table>
             <thead>
                 <tr>
                     <th style="background-color: transparent; border: none;">
                         <Dropdown autoClose="outside">
-                            <DropdownToggle color="success" caret
-                                >Outside</DropdownToggle
+                            <DropdownToggle color="light" caret
+                                >Schedules</DropdownToggle
                             >
                             <DropdownMenu>
                                 <DropdownItem>Démo 1</DropdownItem>
@@ -74,13 +88,14 @@
 
 <style>
     main {
-        margin: 20px;
+        margin: 1vh;
+        margin-top: 0;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 20px;
+        margin-top: 2vh;
     }
 
     .scrollable_box {
